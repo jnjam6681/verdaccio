@@ -1,0 +1,36 @@
+version: '2.4'
+
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:4.7
+    # container_name: npm-mirror-v1
+    restart: always
+    ports:
+      - 4873:4873
+    volumes:
+      - ./conf/:/verdaccio/conf
+      - ./storage/:/verdaccio/storage
+    networks:
+      - verdaccio
+
+  nginx:
+    build: ./nginx
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - verdaccio
+    volumes:
+      - /www/public
+    volumes_from:
+      - verdaccio
+    networks:
+      - verdaccio
+
+networks:
+  verdaccio:
+    driver: bridge
+
+# volumes:
+#   verdaccio:
+#     driver: local
