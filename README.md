@@ -8,7 +8,9 @@ output :
 ```
 admin:$apr1$fgbr4ve1$NdVpWRfRvJHa1CBHHYVUX1
 ```
-set htpasswd to conf
+set htpasswd to conf `./conf/htpasswd`
+
+---
 
 #### Generate Authentication token
 ```
