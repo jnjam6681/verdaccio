@@ -37,3 +37,10 @@ copy to .npmrc
 ```
 //localhost/:_auth=YWRtaW46YWRtaW4=
 ```
+
+---
+
+#### If you can't publish or permission denied
+```
+sudo chown -R 10001:65533 storage
+```
