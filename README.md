@@ -1,5 +1,15 @@
 ## Verdaccio
 
+#### Create user for access
+```
+https://hostingcanada.org/htpasswd-generator/
+```
+output :
+```
+admin:$apr1$fgbr4ve1$NdVpWRfRvJHa1CBHHYVUX1
+```
+set htpasswd to conf
+
 #### Generate Authentication token
 ```
 npm login --registry http://localhost
@@ -17,7 +27,7 @@ copy and use token in .npmrc
 ```
 echo -n '<username>:<passowrd>' | base64
 ```
-output:
+output :
 ```
 YWRtaW46YWRtaW4=
 ```
